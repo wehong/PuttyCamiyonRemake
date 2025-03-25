@@ -160,7 +160,7 @@ def main():
         balloon_group.update()
 
         screen.fill("black")
-        pygame.draw.line(screen, (0,255, 0), [0, 470], [640,470], 10)
+        pygame.draw.line(screen, (0,255, 0), [0, 475], [640,475], 10)
         player_sprite.draw(screen)
         #bubble_sprites.draw(screen)
         balloon_group.draw(screen)
