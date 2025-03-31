@@ -110,9 +110,15 @@ def main():
     screen = pygame.display.set_mode((screen_width, screen_height))
     clock = pygame.time.Clock()
 
-    sc_font = pygame.font.Font(None, 30)
     score = hiscore = 0
     sc_tick = 0
+    sc_font = pygame.font.Font(None, 30)
+    sc_text = sc_font.render(f'Score: {score}     Hi-Score: {hiscore}', True, (200, 200, 100))
+    sc_text_rect = sc_text.get_rect(center = (320, 20))
+
+    go_font = pygame.font.Font(None, 36)
+    go_text = go_font.render('Game Over', True, (255, 10, 10))
+    go_text_rect = go_text.get_rect(center = (320, 240))
 
     player = Player((180, 80))
     player_sprite = pygame.sprite.Group(player)
@@ -187,16 +193,13 @@ def main():
             player_sprite.draw(screen)
             balloon_group.draw(screen)
             sc_text = sc_font.render(f'Score: {score}     Hi-Score: {hiscore}', True, (200, 200, 100))
-            screen.blit(sc_text, (230, 10))
+            screen.blit(sc_text, sc_text_rect) #(220, 10))
 
             pygame.display.flip()
             
             clock.tick(60)
         
-        go_font = pygame.font.Font(None, 36)
-        go_text = go_font.render('Game Over', True, (255, 10, 10))
-        text_rect =go_text.get_rect(center = (320, 240))
-        screen.blit(go_text, text_rect)
+        screen.blit(go_text, go_text_rect)
         pygame.display.flip()
         while play_again:
             for event in pygame.event.get():
