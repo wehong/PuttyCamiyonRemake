@@ -8,7 +8,7 @@ class Player(pygame.sprite.Sprite):
         
         self.image = pygame.image.load("player.png").convert()
         self.image.set_colorkey(self.image.get_at((0, 0)))
-        self.size = (self.image.get_width()*1.5, self.image.get_height()*1.5)
+        self.size = (self.image.get_width(), self.image.get_height())
         self.image = pygame.transform.scale(self.image, self.size)
         self.rect = self.image.get_rect(center=position)
 
@@ -63,14 +63,14 @@ class Player(pygame.sprite.Sprite):
     def set_crash_image(self):
         self.image = pygame.image.load("crash.png").convert()
         self.image.set_colorkey(self.image.get_at((0, 0)))
-        self.size = (self.image.get_width()*1.5, self.image.get_height()*1.5)
+        self.size = (self.image.get_width(), self.image.get_height())
         self.image = pygame.transform.scale(self.image, self.size)
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
     def set_normal_image(self):
         self.image = pygame.image.load("player.png").convert()
         self.image.set_colorkey(self.image.get_at((0, 0)))
-        self.size = (self.image.get_width()*1.5, self.image.get_height()*1.5)
+        self.size = (self.image.get_width(), self.image.get_height())
         self.image = pygame.transform.scale(self.image, self.size)
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
