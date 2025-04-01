@@ -134,13 +134,6 @@ def main():
     crash_sound = pygame.mixer.Sound("crash.ogg")
 
     while True:
-        score = 0
-        player.set_normal_image()
-        player.reloc(180, 80)
-
-        balloons[0].reloc(600, 190)
-        balloons[1].reloc(600, 280)
-        balloons[2].reloc(500, 400)
 
         play_again = True
         running = True
@@ -210,6 +203,13 @@ def main():
                     play_again = False
         if score > hiscore:
             hiscore = score
+        
+        score = 0    
+        player.set_normal_image()
+        player.reloc(180, 80)
+        balloons[0].reloc(600, 190)
+        balloons[1].reloc(600, 280)
+        balloons[2].reloc(500, 400)
 
 
 if __name__ == '__main__':
