@@ -106,6 +106,7 @@ def main():
     pygame.font.init()
     screen_width = 640
     screen_height = 480
+    pygame.display.set_icon(pygame.image.load("player.png"))
     pygame.display.set_caption("Putty Camiyon Remake")
     screen = pygame.display.set_mode((screen_width, screen_height))
     clock = pygame.time.Clock()
